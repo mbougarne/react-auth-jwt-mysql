@@ -15,8 +15,7 @@ export default function Sidebar()
                         <NavLink 
                             className="nav-link" 
                             activeClassName="active"
-                            to="/"
-                            >
+                            exact to="/">
                             Home 
                             <span className="sr-only">(current)</span>
                         </NavLink>
@@ -24,16 +23,14 @@ export default function Sidebar()
                         <NavLink 
                             className="nav-link"
                             activeClassName="active"
-                            to="/login"
-                            >
+                            exact to="/login">
                             Login
                         </NavLink>
                         {/* Sign Up */}
                         <NavLink 
                             className="nav-link"
                             activeClassName="active"
-                            to="/register"
-                            >
+                            exact to="/register">
                             Sign Up
                         </NavLink>
                     </div>
