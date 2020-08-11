@@ -22,13 +22,13 @@ export const Login = async (username, password) => {
 
     let requestData = {
         method: 'POST',
-        body: {
-            username,
-            password
-        }
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({username, password})
     }
-
-    let response = await fetch(`${BASE_API_URL}login`, requestData)
+    
+    let response = await fetch(`${BASE_API_URL}signin`, requestData)
     let data = await response.json()
 
     if(data.accessToken)

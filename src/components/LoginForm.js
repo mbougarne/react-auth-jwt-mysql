@@ -44,16 +44,17 @@ export default function LoginForm()
 
         form.current.validateAll()
 
-        if (checkButton.current.context._errors.length !== 0) 
+        if (checkButton.current.context._errors.length === 0) 
         {
             LoginService(username, password)
-            .then(user => {
+            .then(() => {
 
-                history.push("/profile");
-                location.reload();
-                console.log(user)
-
+                history.push("/profile")
+                window.location.reload()
+                
+        
             }).catch(error => {
+
                 console.log(error)
 
                 const resMessage =
@@ -71,7 +72,7 @@ export default function LoginForm()
         } else {
 
             setLoading(false);
-            
+
         }
 
     }
@@ -90,10 +91,12 @@ export default function LoginForm()
                         <div className="card-body">
                             {/* Username */}
                             <div className="form-group">
+                            <label htmlFor="username">Email/Username</label>
                                 <Input
                                     type="text"
                                     className="form-control"
                                     name="username"
+                                    id="username"
                                     value={username}
                                     onChange={onUsernameChange}
                                     validations={[requiredInput]}  
@@ -101,10 +104,12 @@ export default function LoginForm()
                             </div>
                             {/* Password */}
                             <div className="form-group">
+                                <label htmlFor="password">Password</label>
                                 <Input
-                                    type="text"
+                                    type="password"
                                     className="form-control"
                                     name="password"
+                                    id="password"
                                     value={password}
                                     onChange={onPasswordChange}
                                     validations={[requiredInput]}  
