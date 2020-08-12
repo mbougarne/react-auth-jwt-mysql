@@ -7,11 +7,10 @@ export default function Home() {
 
     useEffect( () => {
         getPublicContent()
-        .then(res => {
-            console.log(res)
-            // setContent(res)
-        })
+        .then(res => res.json())
+        .then(data => data.success && setContent(data.message))
         .catch(error => {
+            console.log(error)
             let errorContent = (error.response && error.response.data) || error.message || error.toString()
             setContent(errorContent)
         })
