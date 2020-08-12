@@ -73,7 +73,7 @@ export default function Sidebar()
                     </ul>
 
                     { currentUser ? (
-                        <ul className="navbar-nav ml-auto">
+                        <ul className="navbar-nav ml-auto"  style={{flexDirection: 'row'}}>
                             <li className="nav-item mr-2">
                                 <NavLink 
                                     className="nav-link" 
@@ -93,7 +93,7 @@ export default function Sidebar()
                         </ul>
 
                     ) : (
-                        <ul className="navbar-nav ml-auto">
+                        <ul className="navbar-nav ml-auto"  style={{flexDirection: 'row'}}>
                             <li className="nav-item mr-2">
                                 <NavLink 
                                     className="nav-link"
