@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 
 import { getCurrentUser, Logout } from '../services/Auth'
 
 export default function Sidebar()
 {
+    let history = useHistory()
 
     let [moderatorBoard, setModeratorBoard] = useState(false) 
     let [adminBoard, setAdminBoard] = useState(false) 
@@ -22,6 +24,14 @@ export default function Sidebar()
         }
 
     }, [])
+
+    const logoutCurrentUser = e => {
+        
+        e.preventDefault()
+        Logout();
+        history.push('/home')
+        window.location.reload()
+    }
 
     return (
         <nav className="navbar navbar-light bg-light">
@@ -86,7 +96,7 @@ export default function Sidebar()
                             <li className="nav-item mr-2">
                                 <button 
                                     className="btn btn-sm btn-danger"
-                                    onClick={e => Logout()}>
+                                    onClick={logoutCurrentUser}>
                                     Logout
                                 </button>
                             </li>
