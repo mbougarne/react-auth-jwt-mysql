@@ -1,5 +1,5 @@
 import React, { useState, useRef} from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import Form from 'react-validation/build/form'
 import Input from 'react-validation/build/input'
 import CheckButton from 'react-validation/build/button'
@@ -21,7 +21,6 @@ const requiredInput = value => {
 export default function LoginForm()
 {
     let history = useHistory()
-    let location = useLocation()
 
     let form = useRef()
     let checkButton = useRef()

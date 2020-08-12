@@ -4,11 +4,10 @@ export const Signup = async (username, email, password) =>
 {
     let requestData = {
         method: "POST",
-        body: {
-            username,
-            email,
-            password
-        }
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({username, email, password, roles: ['user']})
     }
 
     let resposne = await fetch(`${BASE_API_URL}signup`, requestData)

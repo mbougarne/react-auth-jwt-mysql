@@ -1,5 +1,7 @@
 import React from 'react'
 
+import SignupForm from '../components/SignupForm'
+
 export default function Register() {
 
     return (
@@ -9,6 +11,8 @@ export default function Register() {
                     <h1>Create An Account</h1>
                 </div>
             </div>
+            {/* Form */}
+            <SignupForm/>
         </div>
     )
 
