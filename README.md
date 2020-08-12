@@ -1,6 +1,6 @@
 # react-auth-jwt-mysql
 
-React with JWT authentication and Express using Sequelize. The project based on [BezKoder Tutorial] (<https://bezkoder.com/react-hooks-jwt-auth/>) and the back-end is on [JWT with Express and Sequelize] (<https://github.com/mbougarne/node-jwt-mysql>).
+React with JWT authentication and Express using Sequelize. The project based on [BezKoder Tutorial](<https://bezkoder.com/react-hooks-jwt-auth/>) and the back-end is on [JWT with Express and Sequelize](<https://github.com/mbougarne/node-jwt-mysql>).
 
 ## Note
 
