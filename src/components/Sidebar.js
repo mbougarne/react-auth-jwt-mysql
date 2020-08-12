@@ -4,14 +4,11 @@ import { NavLink } from 'react-router-dom'
 export default function Sidebar()
 {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-light bg-light">
             <div className="container">
-                <button className="navbar-toggler" type="button">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="navbar-nav">
-                        {/* Home */}
+                <ul className="navbar-nav ml-auto" style={{flexDirection: 'row'}}>
+                    {/* Home */}
+                    <li className="nav-item mr-2">
                         <NavLink 
                             className="nav-link" 
                             activeClassName="active"
@@ -19,22 +16,26 @@ export default function Sidebar()
                             Home 
                             <span className="sr-only">(current)</span>
                         </NavLink>
-                        {/* Login */}
+                    </li>
+                    {/* Login */}
+                    <li className="nav-item mr-2">
                         <NavLink 
                             className="nav-link"
                             activeClassName="active"
                             exact to="/login">
                             Login
                         </NavLink>
-                        {/* Sign Up */}
+                    </li>
+                    {/* Sign Up */}
+                    <li className="nav-item mr-2">
                         <NavLink 
                             className="nav-link"
                             activeClassName="active"
                             exact to="/register">
                             Sign Up
                         </NavLink>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </nav>
     )
