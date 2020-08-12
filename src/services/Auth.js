@@ -41,4 +41,4 @@ export const Login = async (username, password) => {
 
 export const Logout = () => localStorage.removeItem('user')
 
-export const getCurrentUser = () => JSON.parse('user')
+export const getCurrentUser = () => JSON.parse(localStorage.getItem('user'))
